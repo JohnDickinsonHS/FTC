@@ -49,24 +49,11 @@ task main()
   //main teleop loop
   while(true){
   	getJoystickSettings(joystick); // Get current joystick settings
-    if (joystick.joy1_x1 < 0){ // Turn left
-    	motor[leftMotor] = joystick.joy1_y1; // use power settings from Y-axis
-    	motor[rightMotor] = joystick.joy1_y1 * (64 + joystick.joy1_x1) / 64;
-    }else{ // Turn right
-    	motor[leftMotor] = joystick.joy1_y1; // use power settings from Y-axis
-    	motor[rightMotor] = joystick.joy1_y1 * (64 - joystick.joy1_x1) / 64;
-    }
-  		if(joy1Btn(1) == 1){ // If Joy1-Button1 is pressed:
-      	motor[motorA] = 100;              // Turn Motor A On at full power
-    	}else{                         // If Joy1-Button1 is NOT pressed:
-     		motor[motorA] = 0;                 // Turn Motor A Off
-			}
-}
-if(joy1Btn(1) == 1)
-{
-	motor[motorB] = 50;
-}
-else{
-	motor[motorB] = 0;
-}
+  	singleJoystickControl(joystick.joy1_x1,joystick.joy1_y1);
+  	if(joy1Btn(1) == 1){ // If Joy1-Button1 is pressed:
+    	motor[motorA] = 100;              // Turn Motor A On at full power
+    }else{                         // If Joy1-Button1 is NOT pressed:
+    	motor[motorA] = 0;                 // Turn Motor A Off
+		}
+	}
 }
