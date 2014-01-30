@@ -55,5 +55,20 @@ task main()
     }else{                         // If Joy1-Button1 is NOT pressed:
     	motor[motorA] = 0;                 // Turn Motor A Off
 		}
+    if(joy1Btn(1) == 1){     // If Joy1-Button1 is pressed:
+      motor[motorB] = 100;      // Turn Motor B On at full power
+    }else{                       // If Joy1=Button1 is NOT pressed:
+      motor[motorB] = 0;     // Turn Motor B Off 
+    }
+    {  if(abs(joystick.joy1_y2) > thresholdP) {
+           motor[leftArmMotor] = joystick.joy1_y2;
+      }else{
+      motor[leftArmMotor] = 0;
+  }
+      if(abs(joystick.joy1_y2) > thresholdP) {
+           motor[rightArmMotor] = joystick.joy1_y2;
+      }else{
+      motor[rightArmMotor] = 0;}
+    }
 	}
 }
