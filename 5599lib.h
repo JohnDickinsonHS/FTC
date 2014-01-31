@@ -22,9 +22,9 @@ void singleJoystickControl(int x, int y){
 	if(x < 0){motor[leftMotor] = -y + x;}
   if(x > 0){motor[rightMotor] = -y + x;}
 }
-void tankControl(int y1, y2){
-	if(y1 < 0){motor[leftMotor] = -y + x;}
-	if(y2 > 0){motor[rightMotor] = -y + x;}
+void tankControl(int y1, int y2){
+	motor[leftMotor] = y1;
+	motor[rightMotor] = y2;
 }
 //end library
 #endif
