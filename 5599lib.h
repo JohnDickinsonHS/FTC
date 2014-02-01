@@ -9,8 +9,7 @@ void runDriveMotors(int power, int msecs){
 	wait1Msec(msecs);
 }
 void runArmMotors(int power, int msecs){
-	motor[leftArmMotor] = power;
-	motor[rightArmMotor] = power;
+	motor[armMotors] = power;
 	wait1Msec(msecs);
 }
 void runSweepMotors(int power, int msecs){
@@ -19,8 +18,8 @@ void runSweepMotors(int power, int msecs){
 	wait1Msec(msecs);
 }
 void singleJoystickControl(int x, int y){
-	if(x < 0){motor[leftMotor] = -y + x;}
-  if(x > 0){motor[rightMotor] = -y + x;}
+	if(x < -15){motor[leftMotor] = -y + x;}
+  if(x > 15){motor[rightMotor] = -y + x;}
 }
 void tankControl(int y1, int y2){
 	motor[leftMotor] = y1;

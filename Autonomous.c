@@ -4,8 +4,8 @@
 #pragma config(Motor,  motorC,          leftSweepMotor, tmotorNXT, PIDControl, encoder)
 #pragma config(Motor,  mtr_S1_C1_1,     leftMotor,     tmotorTetrix, openLoop, reversed)
 #pragma config(Motor,  mtr_S1_C1_2,     rightMotor,    tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S1_C2_1,     leftArmMotor,  tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S1_C2_2,     rightArmMotor, tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_1,     armMotors,     tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_2,     bucketMotors,  tmotorTetrix, openLoop)
 #include "5599lib.h" //include team library
 #include "JoystickDriver.c"  //Include file to "handle" the Bluetooth messages.
 
