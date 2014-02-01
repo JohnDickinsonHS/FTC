@@ -5,12 +5,12 @@
 #pragma config(Motor,  mtr_S1_C1_1,     leftMotor,     tmotorTetrix, openLoop, reversed)
 #pragma config(Motor,  mtr_S1_C1_2,     rightMotor,    tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C2_1,     armMotors,     tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S1_C2_2,     bucketMotors,  tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_2,     bucketMotor,  tmotorTetrix, openLoop)
 #include "5599lib.h" //include team library
 #include "JoystickDriver.c"  //Include file to "handle" the Bluetooth messages.
 
 void initializeRobot(){
-	 //any and all initialization tasks go here
+	//any and all initialization tasks go here
 }
 
 

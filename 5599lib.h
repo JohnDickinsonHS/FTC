@@ -19,7 +19,7 @@ void runSweepMotors(int power, int msecs){
 }
 void singleJoystickControl(int x, int y){
 	if(x < -15){motor[leftMotor] = -y + x;}
-  if(x > 15){motor[rightMotor] = -y + x;}
+	if(x > 15){motor[rightMotor] = -y + x;}
 }
 void tankControl(int y1, int y2){
 	motor[leftMotor] = y1;
