@@ -58,7 +58,7 @@ task main()
 			}else if(joy1Btn(6) == 1){
 			runSweepMotors(-127,0);
 		}else{runSweepMotors(0,0);}
-		if(abs(joystick.joy2_y1) > 15){motor[bucketMotor] = joystick.joy2_y1/2;}else{motor[bucketMotor] = 0;}
+		if(abs(joystick.joy2_y1) > 15){motor[bucketMotor] = joystick.joy2_y1 >> 1;}else{motor[bucketMotor] = 0;} //"joystick.joy2_y1 >> 1" does an arithmetic shift of the joystick value one place to the right. effectively divides by two, but much more efficient.
 		if(abs(joystick.joy2_y2) > 15){runArmMotors(joystick.joy2_y2,0);}else{runArmMotors(0,0);}
 	}
 }
