@@ -2,10 +2,10 @@
 #pragma config(Sensor, S1,     ,               sensorI2CMuxController)
 #pragma config(Motor,  motorB,          rightSweepMotor, tmotorNXT, PIDControl, encoder)
 #pragma config(Motor,  motorC,          leftSweepMotor, tmotorNXT, PIDControl, encoder)
-#pragma config(Motor,  mtr_S1_C1_1,     leftMotor,     tmotorTetrix, openLoop, reversed)
-#pragma config(Motor,  mtr_S1_C1_2,     rightMotor,    tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S1_C2_1,     armMotors,     tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S1_C2_2,     bucketMotor,  tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C1_1,     bucketMotor,   tmotorTetrix, openLoop, reversed)
+#pragma config(Motor,  mtr_S1_C1_2,     armMotors,     tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_1,     leftMotor,     tmotorTetrix, openLoop, reversed)
+#pragma config(Motor,  mtr_S1_C2_2,     rightMotor,    tmotorTetrix, openLoop)
 #include "5599lib.h" //include team library
 #include "JoystickDriver.c"  //Include file to "handle" the Bluetooth messages.
 
@@ -41,7 +41,6 @@ task main(){
 	initializeRobot();
 	waitForStart();
 	///////////////////////////
-	runDriveMotors(75,4000); // Run drive motors at power 50 for 4 secs
+	runDriveMotors(75,3500); // Run drive motors at power 50 for 4 secs
 	runDriveMotors(0,4000);
-	runArmMotors(50,4000); // Run arm motors at power 50 for 4 secs
 }
