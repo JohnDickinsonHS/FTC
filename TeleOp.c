@@ -49,10 +49,9 @@ task main()
 	//FTC initial code
 	initializeRobot();
 	waitForStart();   // wait for start of tele-op phase
-	//main teleop loop
-	while(joystick.joy2_y1 != NULL){
+	//main teleop loops
+	while(joystick.joy2_y1 != NULL){ //if joystick 2 exists
 		getJoystickSettings(joystick); // Get current joystick settings
-		//singleJoystickControl(joystick.joy1_x1,joystick.joy1_y1);
 		tankControl(joystick.joy1_y1,joystick.joy1_y2);
 		if(joy1Btn(5) == 1){ // If Joy1-Button1 is pressed:
 			runSweepMotors(127,0);
@@ -62,7 +61,7 @@ task main()
 		if(abs(joystick.joy2_y1) > 15){motor[bucketMotor] = joystick.joy2_y1 >> 1;}else{motor[bucketMotor] = 0;} //"joystick.joy2_y1 >> 1" does an arithmetic shift of the joystick value one place to the right. effectively divides by two, but much more efficient.
 		if(abs(joystick.joy2_y2) > 15){runArmMotors(joystick.joy2_y2,0);}else{runArmMotors(0,0);}
 	}
-	while(joystick.joy2_y1 == NULL){
+	while(joystick.joy2_y1 == NULL){ //if joystick 2 does not exist
 		getJoystickSettings(joystick); // Get current joystick settings
 		tankControl(joystick.joy1_y1,joystick.joy1_y2);
 		if(joy1Btn(1) == 1){ // If Joy1-Button1 is pressed:
